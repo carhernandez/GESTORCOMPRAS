@@ -91,6 +91,9 @@ html, body{
           cursor: pointer;
           border-radius: 20px;
           color: rgb(5, 0, 0);
+  }
+  label{
+    font-display: center;
 
   }
 
