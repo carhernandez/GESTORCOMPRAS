@@ -22,7 +22,9 @@ export class AuthService {
    }
 
 
-   public saveUser(user:any): Observable<any>{
-    return this.http.post(this.urlRegister,user)
+   public saveUser(user:Usuario): Observable<Usuario>{
+    return this.http.post<Usuario>(this.urlRegister,user,{headers:this.httpHeaders})
   }
+
+
 }

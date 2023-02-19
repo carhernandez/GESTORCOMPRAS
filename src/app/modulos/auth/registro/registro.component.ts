@@ -10,7 +10,7 @@ import { AuthService } from 'src/app/servicios/auth.service';
   styleUrls: ['./registro.component.css']
 })
 export class RegistroComponent implements OnInit{
-[x: string]: any;
+// [x: string]: any;
   registroForm!: FormGroup;
   tipoDocumento: any;
   user:any;
