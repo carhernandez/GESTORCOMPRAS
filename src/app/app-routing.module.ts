@@ -1,9 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { LoginComponent } from './modulos/auth/login/login.component';
 import { LayoutComponentComponent } from './modulos/layout/layout-component/layout-component.component';
 import { LayoutLoginComponent } from './modulos/layout/layout-login/layout-login.component';
 
-const routes: Routes = [    {
+const routes: Routes = [
+   {
+    path: '', component: LoginComponent,
+   },
+
+  {
         path: '', component: LayoutLoginComponent,
 
         children: [
