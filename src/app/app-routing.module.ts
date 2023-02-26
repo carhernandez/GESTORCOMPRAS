@@ -4,8 +4,8 @@ import { LayoutComponentComponent } from './modulos/layout/layout-component/layo
 import { LayoutLoginComponent } from './modulos/layout/layout-login/layout-login.component';
 
 const routes: Routes = [    {
-        path: '',
-        component: LayoutLoginComponent,
+        path: '', component: LayoutLoginComponent,
+
         children: [
             { path: '', loadChildren: () => import('src/app/modulos/auth/auth.module').then(m => m.AuthModule) }
         ]
@@ -21,7 +21,7 @@ const routes: Routes = [    {
 
         ]
     },
-    
+
 ];
 
 @NgModule({

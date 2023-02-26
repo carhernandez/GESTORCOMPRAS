@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./barra-busquedad.component.css']
 })
 export class BarraBusquedadComponent {
+  
 
 }

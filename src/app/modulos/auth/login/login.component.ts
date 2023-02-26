@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder,FormGroup,Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/servicios/auth.service';
+import { BarraNavegacionComponent } from '../../componentes/barraNavegacion/barra-navegacion.component';
 
 @Component({
   selector: 'app-login',
@@ -30,6 +31,8 @@ export class LoginComponent implements OnInit{
 
       this.authService.login(this.loginForm?.value).subscribe( resp => {
         if(resp.status === "success"){
+          console.log("login exitoso")
+          console.log(resp.status);
           this.router.navigate(['/barraNavegacion']);
         }else{
           console.log('error al iniciar sesión' + resp.message)

@@ -1,6 +1,6 @@
 <div class="formularioRegistro">
 
-  <h3>registro</h3>
+  <h3>Registrarse</h3>
   <form  [formGroup]="registroForm" class="row" >
     <div class="col-md-6 ml-5">
       <div class="form-group">
@@ -24,12 +24,13 @@
           <label>Email</label>
           <input type="email" formControlName="correo" class="form-control">
       </div>
-      <div>
-        La Contraseña debe contener un carácter especial
-      </div>
+
       <div class="form-group">
           <label>Contraseña</label>
           <input type="password" formControlName="contrasena"class="form-control">
+      </div>
+      <div>
+        La Contraseña debe contener un carácter especial
       </div>
       <div>
           <a routerLink="/login" >Regresar</a>
