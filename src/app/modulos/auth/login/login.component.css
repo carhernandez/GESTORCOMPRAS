@@ -7,6 +7,12 @@ html, body{
   background-size: cover;
   }
 
+  img{
+    width: 50%;
+    height: 50%;
+    align-items: normal;
+  }
+
   /* header{
       display: grid;
       grid-template-columns: repeat(2,1fr);

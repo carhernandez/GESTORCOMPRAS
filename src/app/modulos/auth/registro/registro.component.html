@@ -28,13 +28,24 @@
       <div class="form-group">
           <label>Contraseña</label>
           <input type="password" formControlName="contrasena"class="form-control">
+          <span *ngIf="campoRegistroEsValido('contrasena','required')">
+            campo contraseña es obligatorio
+        </span>
+        <span *ngIf="campoRegistroEsValido('contrasena','pattern')">
+            debes ingresar mayusculas, minusculas y letras
+        </span>
+    </div>
+    <div class="item">
+        <label for="confirmacionContrasena">Confirmacion contrasena</label>
+        <input type="text" name="confirmacionContrasena" id="confirmacionContrasena"
+            formControlName="confirmacionContrasena" placeholder="Ingrese contraseña">
       </div>
       <div>
         La Contraseña debe contener un carácter especial
       </div>
-      <div>
+      <!-- <div>
           <a routerLink="/login" >Regresar</a>
-      </div>
+      </div> -->
       <div>
 
            <button type="submit" class="btn btn-dark" (click)="guardar()" [disabled]="registroForm.invalid" >Registrar</button> -->

@@ -66,4 +66,11 @@ export class RegistroComponent implements OnInit{
     )
   }
 
+  campoRegistroEsValido(campoRegistro: string, validacion: string):
+  boolean {
+  return this.registroForm.controls[campoRegistro].errors?.[
+    validacion] && this.registroForm.controls[campoRegistro].touched;
+}
+
+
 }

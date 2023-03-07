@@ -4,6 +4,9 @@ body{
   height: 100;
   padding: 0;
   margin: 0;
-  background-image: url("conjunto-ropa-mujer-moda-camisa-jeans-bolso-look-moda-hipster-endecha-plana_169016-3209.jpg");
+  background-image: url("assets/cam-morin-knKm7u_7Ihw-unsplash.jpg");
   background-size: cover;
   }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

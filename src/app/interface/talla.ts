@@ -1,6 +1,6 @@
 export interface Talla{
 
-  id:number;
+  idTalla:number;
   talla:string;
 
 }

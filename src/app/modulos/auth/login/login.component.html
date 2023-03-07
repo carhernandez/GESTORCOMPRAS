@@ -1,4 +1,9 @@
+<div>
+  <img src="../../../../assets/logo_copia-removebg-preview.png">
+</div>
+
 <div class="formularioLogin">
+
 
   <form [formGroup]="loginForm">
 
@@ -12,7 +17,8 @@
       <input type="password" formControlName="contrasena" class="form-control">
     </div>
     <div>
-      <a (click)="onRegistro()" style="cursor: pointer;">Registrarme</a>
+      <app-modal #contenido></app-modal>
+      <!-- <a (click)="onRegistro(contenido)" style="cursor: pointer;">Registrarme</a> -->
     </div>
 
 
@@ -21,3 +27,4 @@
   </form>
 
 </div>
+

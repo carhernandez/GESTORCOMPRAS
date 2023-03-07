@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { FormBuilder,FormGroup,Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/servicios/auth.service';
 import { BarraNavegacionComponent } from '../../componentes/barraNavegacion/barra-navegacion.component';
+import { ModalComponent } from '../../componentes/modal/modal.component';
 
 @Component({
   selector: 'app-login',
@@ -10,11 +11,16 @@ import { BarraNavegacionComponent } from '../../componentes/barraNavegacion/barr
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit{
+
+
   loginForm!: FormGroup;
+
+
 
 
   constructor(
     public fb:FormBuilder,
+    public modal:ModalComponent,
     public authService:AuthService,
     private router: Router
   ){}
@@ -45,9 +51,10 @@ export class LoginComponent implements OnInit{
     }
 
 
-    onRegistro()
+    onRegistro(contenido:any)
     {
-      this.router.navigate(['/registro']);
+      //this.router.navigate(['/modal']);
+        this.modal.openCentrado(contenido)
     }
 
 

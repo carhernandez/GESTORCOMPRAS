@@ -6,13 +6,15 @@ import { Talla } from "./talla";
 export interface Producto {
   saveProduct(value: any): unknown;
 
-  id:number;
+  idProducto:number;
   descripcion:string;
   marca:Marca;
   color:Color;
   genero:Genero;
   talla:Talla;
   valor:number;
+  imagen:string;
   cantidad:number;
+  masBuscados:number;
 
 }
