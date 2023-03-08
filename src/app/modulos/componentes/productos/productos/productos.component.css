@@ -1,129 +1,33 @@
 
 
-/* Estilo B */
-.estilo-b{
-  font-family: sans-serif;
-  text-align: center;
-}
-.estilo-b .img-container{
-  overflow: hidden;
-  position: relative;
-}
-.estilo-b .img-container img{
-  width: 100%;
-}
-.estilo-b .img-container .price{
-  position: absolute;
-  top: 10px;
-  left: 0;
-  font-size: 20px;
-  background: white;
-  padding: 15px;
-}
-.estilo-b .img-container .favorite{
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  background: white;
-  border-radius: 50%;
-  height: 50px;
-  width: 50px;
-  cursor: pointer;
-}
-.estilo-b .img-container .favorite svg{
-  transform: translatey(14px);
-}
-.estilo-b .img-container .favorite:hover{
-  background: red;
-}
-.estilo-b .img-container .favorite:hover svg{
-  fill: white;
-}
-.estilo-b a{
-  display: inline-block;
-  margin-top: 2px;
-  text-decoration: none;
-  color: white;
-  background-color: black;
-  padding: 15px;
-  border: 1px solid black;
-}
-.estilo-b a:hover{
-  color: black;
-  background-color: transparent;
-  border: 1px solid black;
-}
 
-/*Estilo C*/
-.estilo-c{
-  font-family: sans-serif;
-  width: 20%;
-}
-.estilo-c .img-container{
-  overflow: hidden;
-  height: 250px;
-  position: relative;
-  border-radius: 15px;
-}
-.estilo-c .img-container img{
-  width: 105%;
-  position: absolute;
-  top: -60%;
-  transition: all 0.5s;
-}
-.estilo-c:hover .img-container img{
-  transform: scale(1.2);
-}
-.estilo-c .img-container .promo{
-  position: absolute;
-  top: 10px;
-  left: 0;
-  font-size: 20px;
-  background: yellow;
-  padding: 15px;
-  color: black;
-  border-bottom-right-radius: 25px;
-  border-top-right-radius: 25px;
-}
-.estilo-c .info-container{
-  display: flex;
-  flex-wrap: wrap;
-  text-align: center;
-  justify-content: center;
-}
-.estilo-c .info-container h3{
-  margin: 0;
-}
-.estilo-c .info-container h3,
-.estilo-c .info-container strong,
-.estilo-c .info-container span{
-  padding: 5px 15px;
-  width: 100%;
-}
-.estilo-c .add-cart{
-  margin-top: 2px;
-  text-decoration: none;
-  color: white;
-  background-color: black;
-  padding: 15px;
-  border: 1px solid black;
-  border-radius: 25px;
-}
-.estilo-c .add-cart:hover{
-  color: black;
-  background-color: transparent;
-  border: 1px solid black;
-}
-
-div{
-  padding: auto;
-  margin-top: 50px;
-}
 
 .card{
-  width: 320px;
-  height: 450px;
+  align-items: center;
+  margin-top: 90px;
+  margin-left: 60px;
+  padding: 10px;
+  width: 220px;
+  height: 350px;
   text-align: center;
+  font-size: 20px;
+  font-family: fantasy;
+  text-align: center;
+  text-shadow:
+    8px 8px 3px rgb(179, 179, 234);
+    box-shadow: 5px 5px 20px rgba(0,0,0,0.4);
+	transform: translateY(-3%);
+  overflow: hidden;
+	background:#fff;
+	box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
+	transition: all 400ms ease-out;
+	cursor: default;
+
+}
+
+.card:hover{
+	box-shadow: 5px 5px 20px rgba(0,0,0,0.4);
+	transform: translateY(-3%);
 }
 
 img{

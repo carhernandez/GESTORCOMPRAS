@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { Producto } from 'src/app/interface/producto';
 import { ProductoService } from 'src/app/servicios/producto.service';
 
 @Component({
@@ -9,31 +10,17 @@ import { ProductoService } from 'src/app/servicios/producto.service';
 })
 export class BarraNavegacionComponent {
 
-  busqueda :string = ""
+  busqueda :string = "";
+  productos :Producto[]=[];
 
 
   constructor(
-    public productoservice:ProductoService,
     private _router: Router
 
     ){}
 
-    consultarProductosHombre(){
-      this.productoservice.buscarHombre().subscribe()
-
-      
-      this._router.navigate(['/productos']);;
-
-
-      console.log("buscarHombre")
-    }
-
-    consultarProductosMujer(){
-      this.productoservice['']();
-    }
-
-    buscar(){
-      console.log(this.busqueda)
+    buscarProducto(termino:String){
+      //this._router.navigate(['/buscar', termino]);
     }
 
 }

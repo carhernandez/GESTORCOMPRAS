@@ -1,31 +1,16 @@
+<div class="card" >
+  <img class="card-img-top" src="assets/{{producto?.imagen}}">
+  <small>{{producto?.descripcion}}</small>
+  <small>{{producto?.color?.color}}</small>
+  <small> {{producto?.valor | currency}}</small>
+  <small>{{producto?.marca?.marca}}</small>
+  <select name="talla" id="talla"  class="form-control" >
+  <option [ngValue]="item" *ngFor="let item of producto.tallas">{{ item.talla }}</option></select>
 
-
-
-<div class="row">
-<div class="container" *ngFor="let item of producto" class="col-sm-3" >
-  <div class="row align-items-start">
-    <div class="col">
-  <div class="content-section">
-    <div class="card" >
-      <img class="card-img-top" src="assets/{{item?.imagen}}">
-      <small>Tipo {{item?.descripcion}}</small>
-      <small>Color {{item?.color?.color}}</small>
-      <small>Precio $ {{item?.valor}}</small>
-      <small>Marca {{item?.marca?.marca}}</small>
-      <!-- <small>{{item?.masBuscados}}</small> -->
-    <form action="">
-      <div class="form-group">
-        <select name="talla" id="talla"  class="form-control" >
-        <option [ngValue]="item" *ngFor="let item of talla">{{ item.talla }}</option></select>
-    </div>
-  </form>
-
-      <button >Agregar al carrito </button>
-
-      <div class="card-block">
-    </div>
-  </div>
+    <button (click)="verProducto()" >Ir al producto</button>
 </div>
+
+
 
 
 

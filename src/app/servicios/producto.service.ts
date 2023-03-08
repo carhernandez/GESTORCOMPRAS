@@ -15,6 +15,8 @@ export class ProductoService {
   private urlRegisterProduct: string='http://localhost:8083/producto/register'
   private urlGetProductMens: string='http://localhost:8083/producto/generoparam/1'
   private urlGetProductWomens: string='http://localhost:8083/producto/generoparam/2'
+
+  private urlGetProductByGender: string='http://localhost:8083/producto/generoparam/'
   private httpHeaders = new HttpHeaders({'Content-type': 'application/json'})
 
   productos:Producto[]=[] ;
@@ -42,11 +44,16 @@ export class ProductoService {
     return this.http.get<Producto[]>(this.urlGetProductWomens);
   }
 
+  public buscarPorGenero(genero:number): Observable<Producto[]>{
+    return this.http.get<Producto[]>(this.urlGetProductByGender+genero);
+  }
+
  private cargarProductos():Observable<Producto[]>{
 
   return this.http.get<Producto[]>(this.urlObtenerProduct);
-}
 
+
+}
 
 
 

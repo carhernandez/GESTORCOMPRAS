@@ -2,7 +2,10 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './modulos/auth/login/login.component';
 import { BarraBusquedadComponent } from './modulos/componentes/barraBusquedad/barra-busquedad.component';
+import { HomeComponent } from './modulos/componentes/home/home/home.component';
 import { ModalComponent } from './modulos/componentes/modal/modal.component';
+import { ProductosHombreComponent } from './modulos/componentes/productos-hombre/productos-hombre/productos-hombre.component';
+import { ProductosMujerComponent } from './modulos/componentes/productos-mujer/productos-mujer/productos-mujer.component';
 import { ProductosComponent } from './modulos/componentes/productos/productos/productos.component';
 import { LayoutComponentComponent } from './modulos/layout/layout-component/layout-component.component';
 import { LayoutLoginComponent } from './modulos/layout/layout-login/layout-login.component';
@@ -38,9 +41,20 @@ const routes: Routes = [
      },
 
      {
-      path: 'barraBusqueda', component: BarraBusquedadComponent,
+      path: 'home', component: HomeComponent,
      },
 
+     {
+      path: 'catalogo/:genero', component: BarraBusquedadComponent,
+     },
+
+     {
+      path: 'hombres', component: ProductosHombreComponent
+     },
+
+     {
+      path: 'mujeres', component: ProductosMujerComponent
+     },
 
 
 ];

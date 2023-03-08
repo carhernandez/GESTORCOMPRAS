@@ -15,6 +15,7 @@ import { LayoutComponentComponent } from './modulos/layout/layout-component/layo
 import { LayoutLoginComponent } from './modulos/layout/layout-login/layout-login.component';
 import { ModalComponent } from './modulos/componentes/modal/modal.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BarraNavegacionComponent } from './modulos/componentes/barraNavegacion/barra-navegacion.component';
 
 
 
@@ -24,6 +25,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     LayoutComponentComponent,
     LayoutLoginComponent,
     // ModalComponent,
+    BarraNavegacionComponent,
+
   ],
   imports: [
     BrowserModule,

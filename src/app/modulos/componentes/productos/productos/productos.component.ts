@@ -1,5 +1,8 @@
-import { Component, OnInit   } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter   } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
+import { Router } from '@angular/router';
+
+
 import { Marca } from 'src/app/interface/marca';
 import { Producto } from 'src/app/interface/producto';
 import { Talla } from 'src/app/interface/talla';
@@ -13,42 +16,29 @@ import { TallaserviceService } from 'src/app/servicios/tallaService/talla.servic
 })
 export class ProductosComponent implements OnInit {
 
- public  producto: Producto [] = [];
- public talla: Talla [] = [];
- public marca: Marca[] =[];
+  @Input()
+  producto: any={};
 
-  constructor(private _productoService: ProductoService,
-              private _tallaService: TallaserviceService,
-              public fb: FormBuilder,
+  @Input()
+  indice: number=0;
+
+  @Output()
+  productoSelecionado: EventEmitter<number> | undefined;
+
+
+
+  constructor(private _router: Router,
     ) {}
 
   ngOnInit(): void {
-    this._tallaService.
-    getAllTallas()
-    .subscribe(resp=>{
+    console.log("ngOnInit");
 
-      this.talla=resp;
-
-     },
-     error => {console.error(error);
-     });
   }
 
-  private buscarProductosHombre(){
-    this._productoService.buscarHombre().subscribe((resp: Producto[]) =>{
-      this.producto = resp;
+  verProducto(){
+    //this._router.navigate(['/producto', this.indice]);
 
-      console.log(resp);
-  })
-
-};
-
-    private buscarProductosMujer(){
-    this._productoService.buscarMujer().subscribe(response =>{
-      this.producto = response
-
-      console.log(response);
-    });
+  }
 
 }
 
@@ -64,4 +54,4 @@ export class ProductosComponent implements OnInit {
 
 
 
-}
+

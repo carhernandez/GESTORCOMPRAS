@@ -39,7 +39,7 @@ export class LoginComponent implements OnInit{
         if(resp.status === "success"){
           console.log("login exitoso")
           console.log(resp.status);
-          this.router.navigate(['/barraNavegacion']);
+          this.router.navigate(['/home']);
         }else{
           console.log('error al iniciar sesión' + resp.message)
         }
