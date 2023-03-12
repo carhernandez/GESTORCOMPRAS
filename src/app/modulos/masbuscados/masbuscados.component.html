@@ -1,0 +1,56 @@
+
+<div class="card" *ngFor="let item of productos" >
+  <img class="card-img-top" src="assets/{{item?.imagen}}">
+  <small>{{item?.descripcion}}</small><br>
+  <small>{{item?.color?.color}}</small><br>
+  <small> {{item?.valor | currency}}</small><br>
+  <small>{{item?.marca?.marca}}</small>
+  <!-- <select name="talla" id="talla"  class="form-control" >
+  <option [ngValue]="item" *ngFor="let item of producto.tallas">{{ item.talla }}</option></select> -->
+
+    <!-- <button (click)="verProducto()" >Ir al producto</button> -->
+
+    <!-- <button [routerLink]="['/verProducto',producto.idProducto]"  >Ir al producto</button> -->
+
+    <a [routerLink]="['/productos',item.idProducto]">seleccionar producto</a>
+</div>
+
+<!-- <a [routerLink]="['/verProducto',item.id]">seleccionar producto</a> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="container">
+  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li *ngFor="let producto of productos; let i = index" [class.active]="i == 0" data-target="#carouselExampleIndicators" [attr.data-slide-to]="i"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item" *ngFor="let producto of productos; let i = index" [class.active]="i == 0">
+        <img class="d-block w-100" [src]="producto.imagen" alt="Imagen de {{producto.descripcion}}">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>{{producto.descripcion</h5>
+          <p>{{producto.descripcion}}</p>
+        </div>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Anterior</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Siguiente</span>
+    </a>
+  </div>
+</div> -->

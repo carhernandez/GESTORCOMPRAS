@@ -1,0 +1,24 @@
+<!-- <div id="product-detail">
+  <h1>{{producto.descripcion}}</h1>
+  <img src="assets/{{producto.imagen}}" [alt]="producto.descripcion">
+  <p>{{producto.descripcion}}</p>
+  <p>Precio: {{producto.valor}}</p>
+</div> -->
+
+<div class="card" >
+  <img class="card-img-top" src="assets/{{producto.imagen}}">
+  <small>{{producto.descripcion}}</small><br>
+  <small>{{producto.color.color}}</small><br>
+  <small> {{producto.valor | currency}}</small><br>
+  <small>{{producto.marca.marca}}</small>
+  <select name="talla" id="talla"  class="form-control" [(ngModel)]="tallaSeleccionada" >
+  <option [ngValue]="item" *ngFor="let item of talla">{{ item.talla }}</option></select>
+
+  <div class="form-group">
+    <label>Cantidad deseada</label>
+    <input type="number" class="form-control" [(ngModel)]="cantidad">
+  </div>
+
+  <div>
+    <button type="submit" class="btn btn-dark" (click)="agregarCarrito()">Agregar al Carrito</button>
+  </div>

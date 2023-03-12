@@ -3,6 +3,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { TipoDocumentoService } from 'src/app/servicios/tipoDocumento/tipo-documento.service';
 import { AuthService } from 'src/app/servicios/auth.service';
+import { TipoDocumento } from 'src/app/interface/tipoDocumento';
+import { Usuario } from 'src/app/interface/usuario';
 
 @Component({
   selector: 'app-registro',
@@ -12,8 +14,8 @@ import { AuthService } from 'src/app/servicios/auth.service';
 export class RegistroComponent implements OnInit{
 // [x: string]: any;
   registroForm!: FormGroup;
-  tipoDocumento: any;
-  user:any;
+  tipoDocumento!: any;
+  user!:Usuario;
 
   constructor(
     public fb: FormBuilder,
@@ -71,6 +73,7 @@ export class RegistroComponent implements OnInit{
   return this.registroForm.controls[campoRegistro].errors?.[
     validacion] && this.registroForm.controls[campoRegistro].touched;
 }
+
 
 
 }

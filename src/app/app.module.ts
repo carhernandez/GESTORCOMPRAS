@@ -16,6 +16,8 @@ import { LayoutLoginComponent } from './modulos/layout/layout-login/layout-login
 import { ModalComponent } from './modulos/componentes/modal/modal.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BarraNavegacionComponent } from './modulos/componentes/barraNavegacion/barra-navegacion.component';
+import { BarraBusquedadComponent } from './modulos/componentes/barraBusquedad/barra-busquedad.component';
+import { MasbuscadosComponent } from './modulos/masbuscados/masbuscados.component';
 
 
 
@@ -26,6 +28,8 @@ import { BarraNavegacionComponent } from './modulos/componentes/barraNavegacion/
     LayoutLoginComponent,
     // ModalComponent,
     BarraNavegacionComponent,
+    
+
 
   ],
   imports: [

@@ -1,13 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter   } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 
 
-import { Marca } from 'src/app/interface/marca';
-import { Producto } from 'src/app/interface/producto';
-import { Talla } from 'src/app/interface/talla';
-import { ProductoService } from 'src/app/servicios/producto.service';
-import { TallaserviceService } from 'src/app/servicios/tallaService/talla.service';
 
 @Component({
   selector: 'app-productos',
@@ -35,10 +29,10 @@ export class ProductosComponent implements OnInit {
 
   }
 
-  verProducto(){
-    //this._router.navigate(['/producto', this.indice]);
+  // verProducto(){
+  //   //this._router.navigate(['/producto', this.indice]);
 
-  }
+  // }
 
 }
 

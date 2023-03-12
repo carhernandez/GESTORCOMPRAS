@@ -7,24 +7,26 @@ import { BarraBusquedadComponent } from './barraBusquedad/barra-busquedad.compon
 import { ModalComponent } from './modal/modal.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProductosComponent } from './productos/productos/productos.component';
-import { BarrapruebaComponent } from './barraprueba/barraprueba.component';
 import { HomeComponent } from './home/home/home.component';
 import { ProductosHombreComponent } from './productos-hombre/productos-hombre/productos-hombre.component';
 import { ProductosMujerComponent } from './productos-mujer/productos-mujer/productos-mujer.component';
+import { ProductoDetalleComponent } from './producto-detalle/producto-detalle.component';
+import { MasbuscadosComponent } from '../masbuscados/masbuscados.component';
 // import { RegistroProductosComponent } from './registroProductos/registro-productos/registro-productos.component';
 
 
 
 @NgModule({
   declarations: [
-    
+
     BarraBusquedadComponent,
     // ModalComponent,
     ProductosComponent,
-    BarrapruebaComponent,
     HomeComponent,
     ProductosHombreComponent,
     ProductosMujerComponent,
+    ProductoDetalleComponent,
+    MasbuscadosComponent,
     // RegistroProductosComponent
   ],
   imports: [

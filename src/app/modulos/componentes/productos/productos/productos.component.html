@@ -1,15 +1,20 @@
 <div class="card" >
   <img class="card-img-top" src="assets/{{producto?.imagen}}">
-  <small>{{producto?.descripcion}}</small>
-  <small>{{producto?.color?.color}}</small>
-  <small> {{producto?.valor | currency}}</small>
+  <small>{{producto?.descripcion}}</small><br>
+  <small>{{producto?.color?.color}}</small><br>
+  <small> {{producto?.valor | currency}}</small><br>
   <small>{{producto?.marca?.marca}}</small>
   <select name="talla" id="talla"  class="form-control" >
   <option [ngValue]="item" *ngFor="let item of producto.tallas">{{ item.talla }}</option></select>
 
-    <button (click)="verProducto()" >Ir al producto</button>
+    <!-- <button (click)="verProducto()" >Ir al producto</button> -->
+
+    <!-- <button [routerLink]="['/verProducto',producto.idProducto]"  >Ir al producto</button> -->
+
+    <a [routerLink]="['/productos',producto.idProducto]">seleccionar producto</a>
 </div>
 
+<!-- <a [routerLink]="['/verProducto',item.id]">seleccionar producto</a> -->
 
 
 
@@ -17,155 +22,3 @@
 
 
 
-
-
-    <!-- <div class="container" ngFor="let item of producto" >
-      <div class="content-section">
-    <div class="card" style="width: 18rem;">
-      <img class="card-img-top" src="/../../../../PROYECTOS CONVERTIC/GestorCompras/src/assets/{{item.imagen}}" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">{{item.producto.descripcion}}</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div> -->
-
-    <!-- <section>
-      <h2></h2>
-        <div class="card estilo-c">
-          <a href="#">
-            <div class="img-container">
-              <img src="../../../../../assets/amanda-hodge-FpQez66W4yQ-unsplash.jpg" alt="producto 1">
-            </div>
-           </a>
-          <div class="info-container">
-            <h3>Chaqueta</h3>
-            <strong>$260.000</strong>
-            <span class="rating">★★★★☆</span>
-            <a href="#" class="add-cart">Añadir al carrito</a>
-          </div>
-        </div>
-        <div class="card estilo-c">
-          <a href="#">
-            <div class="img-container">
-              <img src="../../../../../assets/engin-akyurt-ahs1R32GG9Y-unsplash.jpg" alt="producto 1">
-              <span class="promo"></span>
-            </div>
-            </a>
-
-
-
-
-
-
-
- <section>
-  <h2></h2>
-    <div class="card estilo-c">
-      <a href="#">
-        <div class="img-container">
-          <img src="../../../../../assets/amanda-hodge-FpQez66W4yQ-unsplash.jpg" alt="producto 1">
-          <span class="promo"></span>
-        </div>
-       </a>
-      <div class="info-container">
-        <h3>Chaqueta</h3>
-        <strong>$260.000</strong>
-        <span class="rating">★★★★☆</span>
-        <a href="#" class="add-cart">Añadir al carrito</a>
-      </div>
-    </div>
-    <div class="card estilo-c">
-      <a href="#">
-        <div class="img-container">
-          <img src="../../../../../assets/engin-akyurt-ahs1R32GG9Y-unsplash.jpg" alt="producto 1">
-          <span class="promo"></span>
-        </div>
-        </a>
-      <div class="info-container">
-        <h3>Jean Dama</h3>
-        <strong>$90.000</strong>
-        <span class="rating">★★★☆☆</span>
-        <a href="#" class="add-cart">Añadir al carrito</a>
-      </div>
-    </div>
-    <div class="card estilo-c">
-      <a href="#">
-        <div class="img-container">
-          <img src="../../../../../assets/foto-producto-ropa-maniqui.jpg" alt="producto 1">
-          <span class="promo"></span>
-        </div>
-        </a>
-      <div class="info-container">
-        <h3>Chaqueta Mujer</h3>
-        <strong>$120.000</strong>
-        <span class="rating">★★★★★</span>
-        <a href="#" class="add-cart">Añadir al carrito</a>
-      </div>
-
-    </div>
-</section> -->
-
-<!-- <div class="contenedor">
-  <div class="row align-items-start">
-    <div class="col">
-  <mat-card class="tarjeta" *ngIf="usuario!=null">
-    <mat-card-header>
-      <div mat-card-avatar><img mat-card-image src="{{usuario.results[0].picture.thumbnail}}" class="circular"></div>
-      <mat-card-title>{{usuario.results[0].name.last}}, {{usuario.results[0].name.first}}</mat-card-title>
-      <mat-card-subtitle>{{usuario.results[0].gender=='male'?'varon':'mujer'}}</mat-card-subtitle>
-    </mat-card-header>
-    <img mat-card-image src="{{usuario.results[0].picture.large}}">
-    <mat-card-content>
-      <p>Teléfono:{{usuario.results[0].phone}}</p>
-      <p>Email:{{usuario.results[0].email}}</p>
-    </mat-card-content>
-    <mat-card-actions>
-      <button mat-flat-button (click)="recargar()" color="primary">Otra persona?</button>
-    </mat-card-actions>
-  </mat-card>
-</div>
-</div>
-
-<div class="contenedor">
-  <div class="row align-items-start">
-    <div class="col">
-  <mat-card class="tarjeta" *ngIf="usuario!=null">
-    <mat-card-header>
-      <div mat-card-avatar><img mat-card-image src="{{usuario.results[0].picture.thumbnail}}" class="circular"></div>
-      <mat-card-title>{{usuario.results[0].name.last}}, {{usuario.results[0].name.first}}</mat-card-title>
-      <mat-card-subtitle>{{usuario.results[0].gender=='male'?'varon':'mujer'}}</mat-card-subtitle>
-    </mat-card-header>
-    <img mat-card-image src="{{usuario.results[0].picture.large}}">
-    <mat-card-content>
-      <p>Teléfono:{{usuario.results[0].phone}}</p>
-      <p>Email:{{usuario.results[0].email}}</p>
-    </mat-card-content>
-    <mat-card-actions>
-      <button mat-flat-button (click)="recargar()" color="primary">Otra persona?</button>
-    </mat-card-actions>
-  </mat-card>
-</div>
-</div>
-
-
-<div class="contenedor">
-  <div class="row align-items-start">
-    <div class="col">
-  <mat-card class="tarjeta" *ngIf="usuario!=null">
-    <mat-card-header>
-      <div mat-card-avatar><img mat-card-image src="{{usuario.results[0].picture.thumbnail}}" class="circular"></div>
-      <mat-card-title>{{usuario.results[0].name.last}}, {{usuario.results[0].name.first}}</mat-card-title>
-      <mat-card-subtitle>{{usuario.results[0].gender=='male'?'varon':'mujer'}}</mat-card-subtitle>
-    </mat-card-header>
-    <img mat-card-image src="{{usuario.results[0].picture.large}}">
-    <mat-card-content>
-      <p>Teléfono:{{usuario.results[0].phone}}</p>
-      <p>Email:{{usuario.results[0].email}}</p>
-    </mat-card-content>
-    <mat-card-actions>
-      <button mat-flat-button (click)="recargar()" color="primary">Otra persona?</button>
-    </mat-card-actions>
-  </mat-card>
-</div>
-</div> -->

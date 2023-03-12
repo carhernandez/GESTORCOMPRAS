@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ProductoService } from 'src/app/servicios/producto.service';
 
 @Component({
   selector: 'app-barra-busquedad',
@@ -7,10 +8,22 @@ import { Component } from '@angular/core';
 })
 export class BarraBusquedadComponent {
 
+busqueda:string='';
+
   constructor(
-    
+    private productoService: ProductoService,
 
   ){}
 
+
+  buscarProducto(busqueda:string){
+    console.log(this.busqueda);
+
+    this.productoService.buscar(this.busqueda)
+    .subscribe(resp =>{
+      console.log(resp);
+    })
+
+  }
 
 }

@@ -8,6 +8,8 @@ import {
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { TipoDocumento } from 'src/app/interface/tipoDocumento';
+import { Usuario } from 'src/app/interface/usuario';
 import { AuthService } from 'src/app/servicios/auth.service';
 import { TipoDocumentoService } from 'src/app/servicios/tipoDocumento/tipo-documento.service';
 
@@ -19,8 +21,8 @@ import { TipoDocumentoService } from 'src/app/servicios/tipoDocumento/tipo-docum
 })
 export class ModalComponent implements OnInit {
   registroForm!: FormGroup;
-  tipoDocumento: any;
-  user: any;
+  tipoDocumento!: TipoDocumento[];
+  user!: Usuario;
 
   constructor(
     private modal: NgbModal,
@@ -36,8 +38,9 @@ export class ModalComponent implements OnInit {
       nDocumento: [null, Validators.required],
       nombres: [null, Validators.required],
       apellidos: [null, Validators.required],
-      correo: [null, Validators.required],
+      correo: [null, Validators.required, Validators.email],
       contrasena: [null, Validators.required],
+      contrasena1: [null, Validators.required],
     });
     this.tipodocumentoservice.getAllDocTypes().subscribe(
       (resp) => {
@@ -50,7 +53,13 @@ export class ModalComponent implements OnInit {
   }
 
   guardar(): void {
-    this.userService.saveUser(this.registroForm.value).subscribe(
+
+    let contra= this.registroForm.controls['contrasena'].value;
+    let contra1= this.registroForm.controls['contrasena1'].value;
+
+    if (contra === contra1){
+
+        this.userService.saveUser(this.registroForm.value).subscribe(
       (resp) => {
         this.modal.dismissAll();
         // this._router.navigate(['/login']);
@@ -60,6 +69,10 @@ export class ModalComponent implements OnInit {
         console.error(error);
       }
     );
+    }else{
+      window.alert("contraseña no valida")};
+
+
   }
 
   openCentrado(contenido?: any) {

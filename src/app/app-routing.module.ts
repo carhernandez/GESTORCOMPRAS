@@ -4,6 +4,7 @@ import { LoginComponent } from './modulos/auth/login/login.component';
 import { BarraBusquedadComponent } from './modulos/componentes/barraBusquedad/barra-busquedad.component';
 import { HomeComponent } from './modulos/componentes/home/home/home.component';
 import { ModalComponent } from './modulos/componentes/modal/modal.component';
+import { ProductoDetalleComponent } from './modulos/componentes/producto-detalle/producto-detalle.component';
 import { ProductosHombreComponent } from './modulos/componentes/productos-hombre/productos-hombre/productos-hombre.component';
 import { ProductosMujerComponent } from './modulos/componentes/productos-mujer/productos-mujer/productos-mujer.component';
 import { ProductosComponent } from './modulos/componentes/productos/productos/productos.component';
@@ -41,11 +42,15 @@ const routes: Routes = [
      },
 
      {
+      path: 'productos/:idProducto', component: ProductoDetalleComponent,
+     },
+
+     {
       path: 'home', component: HomeComponent,
      },
 
      {
-      path: 'catalogo/:genero', component: BarraBusquedadComponent,
+      path: 'barra', component: BarraBusquedadComponent,
      },
 
      {

@@ -2,7 +2,7 @@ import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { FormBuilder,FormGroup,Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/servicios/auth.service';
-import { BarraNavegacionComponent } from '../../componentes/barraNavegacion/barra-navegacion.component';
+import Swal from 'sweetalert2';
 import { ModalComponent } from '../../componentes/modal/modal.component';
 
 @Component({
@@ -12,10 +12,7 @@ import { ModalComponent } from '../../componentes/modal/modal.component';
 })
 export class LoginComponent implements OnInit{
 
-
   loginForm!: FormGroup;
-
-
 
 
   constructor(
@@ -35,13 +32,28 @@ export class LoginComponent implements OnInit{
 
     consultar():void{
 
-      this.authService.login(this.loginForm?.value).subscribe( resp => {
+      this.authService.login(this.loginForm?.value).subscribe( (resp:any) => {
+        const correo= resp.correo
+        console.log("este es el correo¡¡¡¡¡¡¡¡¡"+correo)
+
+
         if(resp.status === "success"){
           console.log("login exitoso")
+          Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Has ingresado correctamente',
+            showConfirmButton: false,
+            timer: 1500
+          })
+
+
           console.log(resp.status);
           this.router.navigate(['/home']);
         }else{
+
           console.log('error al iniciar sesión' + resp.message)
+
         }
 
         this.loginForm?.reset;

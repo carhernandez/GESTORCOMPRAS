@@ -3,14 +3,6 @@
 <ng-template #contenido let-modal>
   <div class="modal-header">
     <h4 class="modal-title">Regístrate</h4>
-    <!-- <button
-      class="close"
-      aria-label="close"
-      type="button"
-      (click)="modal.dismiss()"
-    >
-      <span aria-hidden="true">&times;</span>
-    </button> -->
   </div>
   <div class="modal-body">
     <form [formGroup]="registroForm" class="row">
@@ -50,25 +42,19 @@
         </div>
         <div class="form-group">
           <label>Contraseña</label>
-          <input
-            type="password"
-            formControlName="contrasena"
-            class="form-control"
-          />
+          <input type="password" formControlName="contrasena" class="form-control" id="clave1" />
         </div>
         <div>La Contraseña debe contener un caracter especial</div>
-        <!-- <div>
-          <a routerLink="/login">Regresar</a>
-        </div> -->
+        <div class="form-group">
+          <label>Confirmación Contraseña</label>
+          <input type="password" formControlName="contrasena1" class="form-control" id="clave2"/>
+        </div>
+
         <div>
-          <button
-            type="submit"
-            class="btn btn-dark"
-            (click)="guardar()"
-            [disabled]="registroForm.invalid"
-          >
+          <button type="submit" class="btn btn-dark"  (click)="guardar()" [disabled]="registroForm.invalid"  >
             Registrar
           </button>
+          <!--  -->
         </div>
       </div>
     </form>
