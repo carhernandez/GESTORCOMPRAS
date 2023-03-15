@@ -50,6 +50,7 @@ export class LoginComponent implements OnInit{
 
           console.log(resp.status);
           this.router.navigate(['/home']);
+          console.log(resp.status);
         }else{
 
           console.log('error al iniciar sesión' + resp.message)

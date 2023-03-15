@@ -1,10 +1,10 @@
-
+<div class="card-group">
 <div class="card" *ngFor="let item of productos" >
   <img class="card-img-top" src="assets/{{item?.imagen}}">
   <small>{{item?.descripcion}}</small><br>
-  <small>{{item?.color?.color}}</small><br>
-  <small> {{item?.valor | currency}}</small><br>
-  <small>{{item?.marca?.marca}}</small>
+  <!-- <small>{{item?.color?.color}}</small><br> -->
+  <!-- <small> {{item?.valor | currency}}</small><br>
+  <small>{{item?.marca?.marca}}</small> -->
   <!-- <select name="talla" id="talla"  class="form-control" >
   <option [ngValue]="item" *ngFor="let item of producto.tallas">{{ item.talla }}</option></select> -->
 
@@ -14,8 +14,9 @@
 
     <a [routerLink]="['/productos',item.idProducto]">seleccionar producto</a>
 </div>
-
+</div>
 <!-- <a [routerLink]="['/verProducto',item.id]">seleccionar producto</a> -->
+
 
 
 

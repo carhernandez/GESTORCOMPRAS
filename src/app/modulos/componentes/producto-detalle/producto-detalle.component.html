@@ -1,3 +1,168 @@
+<!--ensayo-->
+<div class="card mb-15" style="max-width: 740px; max-height: 740px;" >
+  <div class="row g-0">
+    <div class="col-md-6">
+
+    {{producto.descripcion}}<br>
+      <img class="img-fluid rounded-start" src="assets/{{producto.imagen}}"  style="width:100%;max-width:330px;"  id="imagen">
+    </div>
+    <div class="col-md-6">
+      <div class="card-body">
+
+    <small><b>Color</b></small><br>
+    <small>{{producto.color.color}}</small><br>
+    <small><b>Valor</b></small><br>
+    <small> {{producto.valor | currency}}</small><br>
+    <small><b>Marca</b></small><br>
+    <small>{{producto.marca.marca}}</small><br>
+    <small><b>Talla</b></small><br>
+    <select name="talla" id="talla"  class="form-control" [(ngModel)]="tallaSeleccionada" >
+    <option [ngValue]="item" *ngFor="let item of talla">{{ item.talla }}</option></select>
+
+    <div class="form-group">
+      <label>Cantidad deseada</label>
+      <input type="number" class="form-control" onkeypress="return event.charCode >=48" min="1" [(ngModel)]="cantidad">
+    </div>
+
+    <div>
+      <button type="submit" class="btn btn-dark" (click)="agregarCarrito()">Agregar al Carrito</button>
+    </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="row">
+  <div class="col-6">
+  <div class="container" >
+    <img class="card-img-top" src="assets/{{producto.imagen}}" width="450px" height="950px" style="width: 550px;" style="height: 350px;" id="imagen">
+  </div>
+  </div>
+
+
+    <div class="col-6">
+
+    <div class="col-6" style="background-color: white;" id="cont">
+    <small><b>Descripción</b></small><br>
+    {{producto.descripcion}}<br>
+    <small><b>Color</b></small><br>
+    <small>{{producto.color.color}}</small><br>
+    <small><b>Valor</b></small><br>
+    <small> {{producto.valor | currency}}</small><br>
+    <small><b>Marca</b></small><br>
+    <small>{{producto.marca.marca}}</small><br>
+    <small><b>Talla</b></small><br>
+    <select name="talla" id="talla"  class="form-control" [(ngModel)]="tallaSeleccionada" >
+    <option [ngValue]="item" *ngFor="let item of talla">{{ item.talla }}</option></select>
+
+    <div class="form-group">
+      <label>Cantidad deseada</label>
+      <input type="number" class="form-control" [(ngModel)]="cantidad">
+    </div>
+
+    <div>
+      <button type="submit" class="btn btn-dark" (click)="agregarCarrito()">Agregar al Carrito</button>
+    </div>
+  </div>
+</div>
+</div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<div class="container">
+  <article>
+    <h2 class="product-title">{{producto.descripcion}}</h2>
+
+     <div class="container_1">
+    <img src="../assets/{{producto.imagen}}"
+         alt="Chuck Taylor All Shoes"
+         width="250"
+         height="350"
+         />
+    <p>
+    </div>
+      <div class="container_2">
+        <div class="internal_row">
+      <strong>precio: <small>{{producto.valor | number}}</small></strong>
+    <p class="shipping">seccion: <small>{{producto.genero.genero}}</small></p>
+      </div>
+
+    <p class="statement">descripcion: <small>{{producto.descripcion}}</small>
+    </p>
+    <p class="sale">SALE</p>
+
+    <div >
+    <div>color: <small>{{producto.color.color}}</small></div>
+    <br>
+    <div>marca: <small>{{producto.marca.marca}}</small></div>
+    <br>
+
+    <!-- <div>cantidad Disponible: <small>{{producto.cantidadDisponible}}</small></div> -->
+   <!-- <br>
+    <div class="form-group">
+      <label>Cantidad deseada</label>
+      <input type="number"  class="form-control"  [(ngModel)]="cantidad">
+  </div>
+  <br>
+  <br>
+    </div>
+    </div>
+
+      <div class="container_3">
+
+    <h3 class="product-detail">Products Details</h3>
+
+    <div >
+      <label>Tallas</label>
+      <select name="tallas" id="tallas" class="form-control" [(ngModel)]="tallaSeleccionada">
+      <option [ngValue]="item" *ngFor="let item of talla">{{ item.talla }}</option></select>
+
+  </div>
+    </div>
+
+    <button class="cart" type="submit" (click)="agregarCarrito()">Add to cart</button>
+  </article>
+  </div>-->
+
+
 <!-- <div id="product-detail">
   <h1>{{producto.descripcion}}</h1>
   <img src="assets/{{producto.imagen}}" [alt]="producto.descripcion">
@@ -5,7 +170,8 @@
   <p>Precio: {{producto.valor}}</p>
 </div> -->
 
-<div class="card" >
+
+<!-- <div class="card" >
   <img class="card-img-top" src="assets/{{producto.imagen}}">
   <small>{{producto.descripcion}}</small><br>
   <small>{{producto.color.color}}</small><br>
@@ -21,4 +187,7 @@
 
   <div>
     <button type="submit" class="btn btn-dark" (click)="agregarCarrito()">Agregar al Carrito</button>
-  </div>
+  </div> -->
+
+
+

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './modulos/auth/login/login.component';
 import { BarraBusquedadComponent } from './modulos/componentes/barraBusquedad/barra-busquedad.component';
+import { BarraNavegacionComponent } from './modulos/componentes/barraNavegacion/barra-navegacion.component';
 import { HomeComponent } from './modulos/componentes/home/home/home.component';
 import { ModalComponent } from './modulos/componentes/modal/modal.component';
 import { ProductoDetalleComponent } from './modulos/componentes/producto-detalle/producto-detalle.component';
@@ -10,6 +11,7 @@ import { ProductosMujerComponent } from './modulos/componentes/productos-mujer/p
 import { ProductosComponent } from './modulos/componentes/productos/productos/productos.component';
 import { LayoutComponentComponent } from './modulos/layout/layout-component/layout-component.component';
 import { LayoutLoginComponent } from './modulos/layout/layout-login/layout-login.component';
+import { MasbuscadosComponent } from './modulos/masbuscados/masbuscados.component';
 
 const routes: Routes = [
    {
@@ -34,32 +36,7 @@ const routes: Routes = [
 
         ]
     },
-    {
-      path: 'modal', component: ModalComponent,
-     },
-     {
-      path: 'productos', component: ProductosComponent,
-     },
-
-     {
-      path: 'productos/:idProducto', component: ProductoDetalleComponent,
-     },
-
-     {
-      path: 'home', component: HomeComponent,
-     },
-
-     {
-      path: 'barra', component: BarraBusquedadComponent,
-     },
-
-     {
-      path: 'hombres', component: ProductosHombreComponent
-     },
-
-     {
-      path: 'mujeres', component: ProductosMujerComponent
-     },
+    
 
 
 ];

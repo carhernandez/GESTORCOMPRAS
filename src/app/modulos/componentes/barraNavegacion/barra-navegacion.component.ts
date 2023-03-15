@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Producto } from 'src/app/interface/producto';
 import { ProductoService } from 'src/app/servicios/producto.service';
+import { BarraBusquedadComponent } from '../barraBusquedad/barra-busquedad.component';
 
 @Component({
   selector: 'app-barra-navegacion',
@@ -15,7 +16,8 @@ export class BarraNavegacionComponent {
 
 
   constructor(
-    private _router: Router
+    private _router: Router,
+    
 
     ){}
 

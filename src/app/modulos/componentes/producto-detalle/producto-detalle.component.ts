@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { switchMap, tap } from 'rxjs';
 import { Carrito } from 'src/app/interface/carrito';
@@ -22,9 +23,12 @@ talla: any;
 tallaSeleccionada!:Talla;
 cantidad:number=0;
 estado:string="activo";
-usuario!: Usuario;
+carrito!:Carrito;
+formgroup!: FormGroup;
+//usuario!: Usuario;
 
   constructor(
+    public fb:FormBuilder,
     private activedRouter:ActivatedRoute,
     private productoService:ProductoService,
     private tallaservice:TallaserviceService,
@@ -33,21 +37,33 @@ usuario!: Usuario;
 
 ngOnInit(): void {
 
-  this.activedRouter.params.
-    subscribe(resp =>{
-      this.productoService.buscarDetalle(resp['idProducto'])
-      .subscribe((produc:any)=>{
-        this.id= resp['idProducto'];
+  this.formgroup=this.fb.group({
+    cantidad:[null,Validators.required, Validators.min(0)],
+  })
 
-        this.producto=produc;
-        console.log(resp);
+  this.activedRouter.params
+  .pipe(
+    switchMap(({idProducto})=> this.productoService.buscarDetalle(idProducto))
+  )
+  .subscribe(resp =>{
+    console.log(resp);
+    this.producto=resp;
+      // this.productoService.buscarDetalle(resp['idProducto'])
+      // .subscribe((produc:any)=>{
+      //   this.id= resp['idProducto'];
+
+
+      //   this.producto=produc;
+
+
+      });
+      this.tallaservice.getAllTallas().subscribe(resp=>{
+        this.talla= resp;
 
       })
-    })
-    this.tallaservice.getAllTallas().subscribe(resp=>{
-      this.talla= resp;
 
-    })
+    }
+
 
     // this.activedRouter.params.pipe(switchMap(({idProducto})=>
     // this.productoService.buscarPorId(idProducto)),
@@ -56,36 +72,36 @@ ngOnInit(): void {
     //   console.log(prod);
 
     // })
-}
+
 
 agregarCarrito():void{
 
   let producto= {producto:this.producto};
-  console.log("producto seleccionado"+ producto)
+  console.log(producto)
 
   let cantidad= {cantidad:this.cantidad};
 
   console.log(cantidad);
-  console.log(this.usuario)
+  //console.log(this.usuario)
   console.log(this.estado)
 
   //let tallaSeleccionada= {tallaSeleccionada:this.tallaSeleccionada};
 
   let nuevoObjeto: Carrito={
+    idCarrito:0,
     estado:this.estado,
-    usuario:this.usuario,
-    producto:this.producto,
+    //usuario:this.usuario,
+    producto: producto.producto,
     cantidad:cantidad.cantidad,
 
 
   }
-  console.log("Objeto Nuevo"+nuevoObjeto);
+  console.log(nuevoObjeto);
 
 this.carritoService.grabarCarrito(nuevoObjeto).subscribe(resp =>{
   console.log(resp);
 
 })
-
 
 }
 

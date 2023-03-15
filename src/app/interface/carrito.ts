@@ -3,8 +3,9 @@ import { Usuario } from "./usuario";
 
 export interface Carrito{
 
+ idCarrito: number;
  estado:string;
- usuario:Usuario;
+ //usuario:Usuario;
  producto:Producto;
  cantidad:number;
 

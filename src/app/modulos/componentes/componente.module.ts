@@ -12,6 +12,7 @@ import { ProductosHombreComponent } from './productos-hombre/productos-hombre/pr
 import { ProductosMujerComponent } from './productos-mujer/productos-mujer/productos-mujer.component';
 import { ProductoDetalleComponent } from './producto-detalle/producto-detalle.component';
 import { MasbuscadosComponent } from '../masbuscados/masbuscados.component';
+import { CarritoComponent } from './carrito/carrito.component';
 // import { RegistroProductosComponent } from './registroProductos/registro-productos/registro-productos.component';
 
 
@@ -19,7 +20,7 @@ import { MasbuscadosComponent } from '../masbuscados/masbuscados.component';
 @NgModule({
   declarations: [
 
-    BarraBusquedadComponent,
+    
     // ModalComponent,
     ProductosComponent,
     HomeComponent,
@@ -27,6 +28,9 @@ import { MasbuscadosComponent } from '../masbuscados/masbuscados.component';
     ProductosMujerComponent,
     ProductoDetalleComponent,
     MasbuscadosComponent,
+    CarritoComponent,
+
+
     // RegistroProductosComponent
   ],
   imports: [

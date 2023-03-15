@@ -8,6 +8,7 @@ export interface Producto {
 
   idProducto:number;
   descripcion:string;
+  detalle:string;
   marca:Marca;
   color:Color;
   genero:Genero;

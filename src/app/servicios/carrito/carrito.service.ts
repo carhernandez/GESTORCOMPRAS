@@ -20,6 +20,7 @@ private httpHeaders = new HttpHeaders({'Content-type': 'application/json'})
   ) { }
 
   public grabarCarrito(carrito:Carrito): Observable<Carrito>{
+    console.log(carrito)
     return this.http.post<Carrito>(this.url,carrito,{headers:this.httpHeaders})
   }
 }

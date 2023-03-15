@@ -1,4 +1,53 @@
-img{
-width: 55px;
-height: 55px;
+#cont{
+  width: 600%;
+  height: 116%;
+}
+
+
+.card{
+  font-family: 'Raleway', sans-serif;
+  font-family: 'Tilt Warp', cursive;
+  align-items: center;
+  margin-top: 90px;
+  margin-left: 120px;
+  padding: 20px;
+  width: 1020px;
+  height: 450px;
+
+  font-size: 20px;
+  font-family: fantasy;
+  text-align: left;
+	transform: translateY(-3%);
+  overflow: hidden;
+	background:#fff;
+	box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
+	transition: all 400ms ease-out;
+	cursor: default;
+
+}
+
+.card:hover{
+	box-shadow: 5px 5px 20px rgb(0, 0, 0);
+	/* transform: translateY(-13%); */
+}
+
+
+input{
+  width: 70px;
+  height: auto;
+  align-items: center;
+}
+form{
+  width: 20px;
+  height: auto;
+}
+
+option{
+  width: 70px;
+  height: auto;
+}
+
+select{
+  width: 70px;
+  height: auto;
 }

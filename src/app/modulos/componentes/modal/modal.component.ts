@@ -12,6 +12,7 @@ import { TipoDocumento } from 'src/app/interface/tipoDocumento';
 import { Usuario } from 'src/app/interface/usuario';
 import { AuthService } from 'src/app/servicios/auth.service';
 import { TipoDocumentoService } from 'src/app/servicios/tipoDocumento/tipo-documento.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-modal',
@@ -39,7 +40,7 @@ export class ModalComponent implements OnInit {
       nombres: [null, Validators.required],
       apellidos: [null, Validators.required],
       correo: [null, Validators.required, Validators.email],
-      contrasena: [null, Validators.required],
+      contrasena: [null, Validators.required, Validators.minLength(5)],
       contrasena1: [null, Validators.required],
     });
     this.tipodocumentoservice.getAllDocTypes().subscribe(
@@ -61,6 +62,13 @@ export class ModalComponent implements OnInit {
 
         this.userService.saveUser(this.registroForm.value).subscribe(
       (resp) => {
+        Swal.fire({
+          position: 'top-end',
+          icon: 'success',
+          title: 'Registro Exitoso',
+          showConfirmButton: false,
+          timer: 1500
+        })
         this.modal.dismissAll();
         // this._router.navigate(['/login']);
         this.registroForm.reset();
@@ -70,9 +78,13 @@ export class ModalComponent implements OnInit {
       }
     );
     }else{
-      window.alert("contraseña no valida")};
-
-
+      //window.alert("contraseña no valida")};
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Las Contraseñas No Coinciden!',
+      })
+    }
   }
 
   openCentrado(contenido?: any) {

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Producto } from 'src/app/interface/producto';
 import { ProductoService } from 'src/app/servicios/producto.service';
 
 @Component({
@@ -9,6 +10,7 @@ import { ProductoService } from 'src/app/servicios/producto.service';
 export class BarraBusquedadComponent {
 
 busqueda:string='';
+productos!:Producto[];
 
   constructor(
     private productoService: ProductoService,
