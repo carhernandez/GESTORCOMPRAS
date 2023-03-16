@@ -88,13 +88,13 @@ agregarCarrito():void{
   //let tallaSeleccionada= {tallaSeleccionada:this.tallaSeleccionada};
 
   let nuevoObjeto: Carrito={
-    idCarrito:0,
-    estado:this.estado,
+    idCarrito: 0,
+    estado: this.estado,
     //usuario:this.usuario,
     producto: producto.producto,
-    cantidad:cantidad.cantidad,
-
-
+    cantidad: cantidad.cantidad,
+    cantidadPedida: undefined,
+    tallaPedida: undefined
   }
   console.log(nuevoObjeto);
 

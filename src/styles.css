@@ -6,6 +6,8 @@ body{
   margin: 0;
   background-image: url("assets/poridentidad.png");
   background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   }
 
 html, body { height: 100%; }

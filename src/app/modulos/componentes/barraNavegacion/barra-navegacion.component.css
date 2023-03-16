@@ -1,9 +1,13 @@
-/* nav {
-  background-color: transparent !important;
-
+ nav {
+  /* background-color: transparent !important; */
+  overflow:hidden;
+  position: fixed;
+  z-index: 100;
+  width: 1350px;
+margin-left: -115px;
 }
 
-
+/*
 .flexMain {
   display:flex;
   align-items: center

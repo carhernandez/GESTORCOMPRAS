@@ -3,7 +3,7 @@ import { TipoDocumento } from "./tipoDocumento";
 export interface Usuario{
 message: string;
 status: string;
-id:number;
+idUsuario:number;
 correo:string;
 tipoDocumento:TipoDocumento;
 nDocumento:number;

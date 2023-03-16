@@ -8,6 +8,7 @@ import { ProductoDetalleComponent } from './producto-detalle/producto-detalle.co
 import { MasbuscadosComponent } from '../masbuscados/masbuscados.component';
 import { BarraBusquedadComponent } from "./barraBusquedad/barra-busquedad.component";
 import { ModalComponent } from "./modal/modal.component";
+import { CarritoComponent } from "./carrito/carrito.component";
 
 
 
@@ -23,5 +24,6 @@ export const ComponenteRutas: Route[] = [
     {path: 'hombres', component: ProductosHombreComponent},
      {path: 'mujeres', component: ProductosMujerComponent},
      {path: 'masBuscados', component: MasbuscadosComponent},
+     {path: 'carrito', component: CarritoComponent},
 
 ]

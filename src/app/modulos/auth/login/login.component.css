@@ -68,7 +68,7 @@ html, body{
           font-weight: normal;
           font-style: normal;
       position: sticky;
-      color: rgb(38, 5, 156)
+      color: rgb(252, 252, 252)
   }
 
   input{
@@ -98,10 +98,7 @@ html, body{
           border-radius: 20px;
           color: rgb(5, 0, 0);
   }
-  label{
-    font-display: center;
 
-  }
 
   hyper{
       font-family: 'LemonRegular';
@@ -118,4 +115,15 @@ html, body{
           margin: auto;
           width: 7em;
           height: auto;
+  }
+
+  #jumbotron{
+    width: 650px;
+    box-shadow: 0 1rem 1rem rgba(185, 185, 185, 0.3);
+    margin-left: 500px;
+    margin-top: 5px;
+  }
+
+  #logo{
+    margin-left: 10px;
   }

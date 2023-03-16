@@ -1,6 +1,6 @@
 .card{
   align-items: center;
-  margin-top: 90px;
+  margin-top: 220px;
   margin-left: 60px;
   padding: 10px;
   width: 220px;
@@ -30,4 +30,7 @@ img{
   height: 50%;
   transition: all 0.5s;
 
+}
+text{
+  color: black;
 }
